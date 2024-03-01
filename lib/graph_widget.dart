@@ -7,7 +7,10 @@ import 'states/drawing_state.dart';
 import 'store_wrapper.dart';
 import 'package:uuid/uuid.dart';
 
-class GraphWidget extends StatelessWidget /*implements ICounterUpdater*/ {
+class GraphWidget extends StatelessWidget {
+
+  final int FREQ = 24;      // frames-per-seconds
+  final int PERIOD = 1000;  // 1s = 1000ms
 
   final int samplesNumber;
   final double width;
@@ -21,7 +24,8 @@ class GraphWidget extends StatelessWidget /*implements ICounterUpdater*/ {
   final Obtained obtain = Obtained.part(const Duration(milliseconds: 24));
 
   GraphWidget({super.key, required this.samplesNumber, required this.width, required this.height}) {
-    storeWrapper = StoreWrapper(samplesNumber, 5, 6);
+    int pointsToDraw = (samplesNumber.toDouble()/(PERIOD.toDouble()/FREQ.toDouble())).toInt() + 1;
+    storeWrapper = StoreWrapper(samplesNumber, 5, pointsToDraw);
   }
 
   @override

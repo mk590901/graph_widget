@@ -6,25 +6,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'drawing_bloc.dart';
 import 'events/draw_events.dart';
 import 'events/event.dart';
-//import 'interfaces/i_counter_updater.dart';
 import 'pair_data_object.dart';
 
 class Obtained {
 
   final Duration _period;
   late int _cycles;
-  //late ICounterUpdater _counterUpdater;
   late BuildContext _context;
 
   late Timer? _timer;
 
   int _counter = 1; //  Ok
 
-  Obtained (this._period, this._cycles, this._context/*, this._counterUpdater*/);
+  Obtained (this._period, this._cycles, this._context);
 
   Obtained.part (this._period);
 
-  void set(int cycles, BuildContext context/*, ICounterUpdater counterUpdater*/) {
+  void set(int cycles, BuildContext context) {
     _cycles = cycles;
     _context = context;
     //_counterUpdater = counterUpdater;
@@ -42,9 +40,6 @@ class Obtained {
   }
 
   void redraw(BuildContext context, String uuid, int counter) {
-    // if (_counterUpdater != null) {
-    //   _counterUpdater.updateCounter(counter);
-    // }
     Event? event = Drawing();
     event.setData(Pair(uuid,counter));
     context.read<DrawingBloc>().add(event);
