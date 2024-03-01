@@ -9,7 +9,7 @@ import 'package:uuid/uuid.dart';
 
 class GraphWidget extends StatelessWidget {
 
-  final int FREQ = 24;      // frames-per-seconds
+  static const int FREQ = 24;      // frames-per-seconds
   final int PERIOD = 1000;  // 1s = 1000ms
 
   final int samplesNumber;
@@ -21,7 +21,7 @@ class GraphWidget extends StatelessWidget {
 
   late StoreWrapper storeWrapper;
 
-  final Obtained obtain = Obtained.part(const Duration(milliseconds: 24));
+  final Obtained obtain = Obtained.part(const Duration(milliseconds: FREQ));
 
   GraphWidget({super.key, required this.samplesNumber, required this.width, required this.height}) {
     int pointsToDraw = (samplesNumber.toDouble()/(PERIOD.toDouble()/FREQ.toDouble())).toInt() + 1;
