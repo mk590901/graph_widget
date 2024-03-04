@@ -25,10 +25,8 @@ class Obtained {
   void set(int cycles, BuildContext context) {
     _cycles = cycles;
     _context = context;
-    //_counterUpdater = counterUpdater;
   }
 
-  //@override
   void start(final String uuid) {
     print ('------- Obtainer.start [$uuid] -------');
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'graph_widget.dart';
+import 'graph_mode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,48 +49,56 @@ class AppHomePage extends StatelessWidget {
                 samplesNumber: 200,
                 width: 340,
                 height: 100,
+                mode: GraphMode.overlay
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 128,
                 width: 340,
                 height: 100,
+                mode: GraphMode.flowing
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 250,
                 width: 340,
                 height: 100,
+                mode: GraphMode.overlay
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 300,
                 width: 340,
                 height: 100,
+                mode: GraphMode.flowing
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 180,
                 width: 340,
                 height: 100,
+                mode: GraphMode.overlay
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 220,
                 width: 340,
                 height: 100,
+                mode: GraphMode.flowing
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 350,
                 width: 340,
                 height: 100,
+                mode: GraphMode.overlay
               ),
               const SizedBox(height: 16.0),
               GraphWidget(
                 samplesNumber: 240,
                 width: 340,
                 height: 100,
+                mode: GraphMode.flowing
               ),
               const SizedBox(height: 16.0),
             ],
