@@ -8,7 +8,6 @@
 import 'package:graph_widget/circular_buffer.dart';
 import 'package:graph_widget/graph_mode.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:graph_widget/circular_buffer.dart';
 import 'package:graph_widget/store_wrapper.dart';
 
 void main() {
